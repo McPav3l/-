@@ -1,0 +1,302 @@
+/* ==========================================
+   1. СБРОС И БАЗА
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ==========================================
+   2. ШАПКА — все 4 кнопки в одну строку
+   ========================================== */
+header {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e6ebf2;
+}
+
+header img {
+    display: block;
+    width: 60px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b2545;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Меню — растягивается и прижимает свои ссылки вправо */
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 16px;
+    background-color: rgba(0, 42, 255, 0.6);
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: rgba(0, 42, 255, 0.85);
+    color: #ffffff;
+}
+
+/* Четвёртая кнопка — стоит рядом с меню, в общем flex-потоке */
+a.btn {
+    display: inline-block;
+    background-color: rgba(0, 42, 255, 0.6);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    transition: background-color 0.25s ease;
+}
+
+a.btn:hover {
+    background-color: rgba(0, 42, 255, 0.85);
+    color: #ffffff;
+}
+
+/* ==========================================
+   3. ГЛАВНЫЙ БЛОК — синий баннер
+   ========================================== */
+main {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 40px 60px;
+    color: #ffffff;
+    background:
+        linear-gradient(120deg, rgba(11, 37, 69, 0.95) 0%, rgba(20, 70, 140, 0.85) 60%, rgba(30, 111, 217, 0.75) 100%),
+        linear-gradient(135deg, #0b2545 0%, #1e6fd9 100%);
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+}
+
+main::before,
+main::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.04);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main::before {
+    top: -300px;
+    right: -150px;
+}
+
+main::after {
+    bottom: -350px;
+    left: -200px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+main > img {
+    display: none;
+}
+
+section {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+section p {
+    font-size: 17px;
+    color: #d6e2f3;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+section a {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0b2545;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid #ffffff;
+    transition: all 0.25s ease;
+}
+
+section a:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* ==========================================
+   4. ПОДВАЛ
+   ========================================== */
+footer {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-top: 4px solid #1e6fd9;
+    box-shadow: 0 6px 20px rgba(11, 37, 69, 0.06);
+}
+
+.footer-text h2 {
+    font-size: 20px;
+    color: #0b2545;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.footer-text p {
+    font-size: 14px;
+    color: #5a6b7d;
+    margin: 6px 0;
+}
+
+.footer-text a {
+    color: #1e6fd9;
+    text-decoration: none;
+    border-bottom: 1px dashed #1e6fd9;
+    transition: color 0.25s ease;
+}
+
+.footer-text a:hover {
+    color: #0b2545;
+    border-bottom-color: #0b2545;
+}
+
+footer img {
+    border-radius: 10px;
+    border: 1px solid #e6ebf2;
+}
+
+/* ==========================================
+   5. АДАПТИВНОСТЬ
+   ========================================== */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    /* Меню уходит на новую строку — все кнопки встают под логотипом */
+    header nav {
+        flex: 1 0 100%;
+        justify-content: flex-start;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main {
+        padding: 50px 25px 40px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    header img {
+        width: 45px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a,
+    a.btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    main {
+        padding: 40px 18px 35px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+    }
+}
