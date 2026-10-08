@@ -18,32 +18,49 @@ body {
 }
 
 /* ==========================================
-   2. ШАПКА — все 4 кнопки в одну строку
+   2. ШАПКА — современное оформление
    ========================================== */
 header {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 18px 30px;
+    margin: 20px auto;
+    padding: 22px 40px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
-    border-bottom: 1px solid #e6ebf2;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(11, 37, 69, 0.1);
+    border: 1px solid rgba(11, 37, 69, 0.08);
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
 }
 
 header img {
     display: block;
-    width: 60px;
+    width: 70px;
     height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
 }
 
 header h1 {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 800;
     color: #0b2545;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    text-transform: none;
+    background: linear-gradient(90deg, #0b2545, #1e6fd9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
 }
 
 /* Меню — растягивается и прижимает свои ссылки вправо */
@@ -56,60 +73,97 @@ header nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: nowrap;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
+    color: #0b2545;
+    font-weight: 600;
     font-size: 15px;
-    padding: 8px 16px;
-    background-color: rgba(0, 42, 255, 0.6);
-    border-radius: 4px;
-    transition: background-color 0.25s ease;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     white-space: nowrap;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e6fd9, #0b2545);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 6px;
 }
 
 nav a:hover {
-    background-color: rgba(0, 42, 255, 0.85);
     color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(30, 111, 217, 0.2);
 }
 
-/* Четвёртая кнопка — стоит рядом с меню, в общем flex-потоке */
+nav a:hover:before {
+    opacity: 1;
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+/* Кнопки с классом btn */
 a.btn {
     display: inline-block;
-    background-color: rgba(0, 42, 255, 0.6);
+    background: linear-gradient(135deg, #1e6fd9, #0b2545);
     color: #ffffff;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 15px;
     white-space: nowrap;
-    transition: background-color 0.25s ease;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 12px rgba(30, 111, 217, 0.25);
 }
 
 a.btn:hover {
-    background-color: rgba(0, 42, 255, 0.85);
+    background: linear-gradient(135deg, #0b2545, #1e6fd9);
     color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 111, 217, 0.35);
+}
+
+a.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(30, 111, 217, 0.25);
 }
 
 /* ==========================================
-   3. ГЛАВНЫЙ БЛОК — синий баннер
+   3. ГЛАВНЫЙ БЛОК — СТАРЫЙ ДИЗАЙН
    ========================================== */
 main {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     padding: 70px 40px 60px;
     color: #ffffff;
     background:
         linear-gradient(120deg, rgba(11, 37, 69, 0.95) 0%, rgba(20, 70, 140, 0.85) 60%, rgba(30, 111, 217, 0.75) 100%),
         linear-gradient(135deg, #0b2545 0%, #1e6fd9 100%);
-    border-radius: 0 0 14px 14px;
+    border-radius: 14px;
     overflow: hidden;
 }
 
@@ -140,13 +194,14 @@ main > img {
     display: none;
 }
 
-section {
+/* Старый дизайн секции слоган - БЕЗ ИЗМЕНЕНИЙ */
+section.slogan-section {
     position: relative;
     z-index: 2;
     max-width: 750px;
 }
 
-section h2 {
+section.slogan-section h2 {
     font-size: 42px;
     font-weight: 700;
     line-height: 1.2;
@@ -154,77 +209,159 @@ section h2 {
     color: #ffffff;
 }
 
-section p {
+section.slogan-section p {
     font-size: 17px;
     color: #d6e2f3;
     margin-bottom: 35px;
     line-height: 1.7;
 }
 
-section a {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #0b2545;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 15px;
-    border: 2px solid #ffffff;
-    transition: all 0.25s ease;
-}
-
-section a:hover {
-    background-color: transparent;
-    color: #ffffff;
-}
-
 /* ==========================================
-   4. ПОДВАЛ
+   4. СЕКЦИЯ О КОМПАНИИ С БЕЛЫМ ФОНОМ
    ========================================== */
-footer {
+main.white-bg-section {
     max-width: 1200px;
     margin: 30px auto;
-    padding: 30px;
+    padding: 30px 40px;
     background-color: #ffffff;
     border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-    border-top: 4px solid #1e6fd9;
     box-shadow: 0 6px 20px rgba(11, 37, 69, 0.06);
 }
 
-.footer-text h2 {
-    font-size: 20px;
-    color: #0b2545;
-    margin-bottom: 14px;
+.company-content {
+    color: #000000;
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.company-content h2 {
+    font-size: 36px;
     font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.company-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin: 25px 0 15px;
+    line-height: 1.4;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+.company-content p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.company-content ul {
+    margin: 15px 0 25px 25px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.company-content li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #000000;
+}
+
+/* ==========================================
+   5. ПОДВАЛ
+   ========================================== */
+footer {
+    max-width: 1200px;
+    margin: 40px auto 30px;
+    padding: 40px 50px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 30px rgba(11, 37, 69, 0.1);
+    border: 1px solid rgba(11, 37, 69, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #1e6fd9, #0b2545);
+    border-radius: 18px 18px 0 0;
+}
+
+.footer-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-text h2 {
+    font-size: 24px;
+    color: #0b2545;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1e6fd9, #0b2545);
+    border-radius: 1.5px;
 }
 
 .footer-text p {
-    font-size: 14px;
-    color: #5a6b7d;
-    margin: 6px 0;
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
 .footer-text a {
     color: #1e6fd9;
     text-decoration: none;
-    border-bottom: 1px dashed #1e6fd9;
-    transition: color 0.25s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
 }
 
 .footer-text a:hover {
     color: #0b2545;
-    border-bottom-color: #0b2545;
+    border-bottom-color: #1e6fd9;
 }
 
 footer img {
-    border-radius: 10px;
-    border: 1px solid #e6ebf2;
+    width: 100px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid #ffffff;
+}
+
+footer img:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================
@@ -248,6 +385,25 @@ footer img {
 
     main {
         padding: 50px 25px 40px;
+    }
+
+    main.white-bg-section {
+        padding: 25px 25px;
+    }
+
+    .company-content {
+        padding: 25px 20px;
+    }
+
+    .company-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .company-content h3 {
+        font-size: 22px;
+        margin: 20px 0 12px;
+        padding-bottom: 6px;
     }
 
     section h2 {
@@ -294,9 +450,510 @@ footer img {
         font-size: 15px;
     }
 
+    main.white-bg-section {
+        padding: 15px 15px;
+        margin: 15px auto;
+    }
+
+    .company-content {
+        padding: 20px 15px;
+        margin: 15px 0;
+    }
+
+    .company-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .company-content h3 {
+        font-size: 20px;
+        margin: 20px 0 12px;
+        padding-bottom: 6px;
+    }
+
+    .company-content p,
+    .company-content li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .company-content p,
+    .company-content li {
+        font-size: 15px;
+    }
+
     footer {
         flex-direction: column;
         align-items: flex-start;
         padding: 22px;
+    }
+}
+/* ==========================================
+   6. СТИЛИ ДЛЯ ПОРТФОЛИО
+   ========================================== */
+
+.portfolio-section {
+    padding: 30px 20px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.portfolio-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(30, 111, 217, 0.15);
+}
+
+.card-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #1e6fd9;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    color: #0b2545;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.card-content p strong {
+    color: #0b2545;
+}
+
+.special-offer-section {
+    background: linear-gradient(135deg, #0b2545, #1e6fd9) !important;
+    color: white !important;
+    margin-top: 20px !important;
+}
+
+.special-offer-banner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.offer-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e6fd9;
+}
+
+.offer-content h2 {
+    color: white !important;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.offer-content p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.btn-large {
+    padding: 16px 32px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+.portfolio-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1e6fd9;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Адаптивность для портфолио */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .special-offer-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px;
+    }
+    
+    .offer-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .offer-content h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-image {
+        height: 160px;
+    }
+    
+    .special-offer-banner {
+        padding: 25px 20px;
+    }
+    
+    .offer-content h2 {
+        font-size: 22px;
+    }
+    
+    .btn-large {
+        padding: 14px 28px !important;
+        font-size: 16px !important;
+    }
+    
+    .portfolio-stats {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .stat-item {
+        min-width: 100%;
+    }
+}
+/* ==========================================
+   7. СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ
+   ========================================== */
+
+.contacts-section {
+    padding: 30px 20px;
+}
+
+.contacts-intro {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contacts-container {
+    display: flex;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #1e6fd9, #0b2545);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.contact-details h3 {
+    font-size: 18px;
+    color: #0b2545;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contact-features {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.contact-features h3 {
+    font-size: 18px;
+    color: #0b2545;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-features ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.contact-features li {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.contact-map h3 {
+    font-size: 20px;
+    color: #0b2545;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-map p {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-section {
+    margin-top: 20px !important;
+}
+
+.form-intro {
+    font-size: 17px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #0b2545;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e6fd9;
+    box-shadow: 0 0 0 3px rgba(30, 111, 217, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.contact-form .btn-large {
+    width: 100%;
+    padding: 15px !important;
+    font-size: 17px !important;
+}
+
+.form-note {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #7b8a9c;
+}
+
+/* Адаптивность для контактов */
+@media (max-width: 900px) {
+    .contacts-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contact-info,
+    .contact-map {
+        min-width: 100%;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contacts-intro,
+    .form-intro {
+        font-size: 16px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-details h3 {
+        font-size: 17px;
+    }
+    
+    .contact-details p {
+        font-size: 15px;
+    }
+    
+    .contact-form {
+        padding: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .contact-form .btn-large {
+        padding: 14px !important;
+        font-size: 16px !important;
     }
 }
