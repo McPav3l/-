@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Айкрит</title>
+    <title>Айкрит - IT решения для бизнеса</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="liquid-glass.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- ================= ШАПКА САЙТА ================= -->
-    <header>
+    <header class="glass-shimmer">
         <!-- Логотип слева -->
         <img src="Img/1.png" alt="Логотип компании">
 
@@ -21,26 +23,27 @@
         <!-- Навигационное меню -->
         <nav>
             <ul>
-                <li><a class = "btn" href="index.html">Главная страница</a></li>
-                <li><a class = "btn" href="about.html">Портфолио кейсов</a></li>
-                <li><a class = "btn" href="contacts.html">Контакты</a></li>
-                <li><a class = "btn" href="index.html">Обсудить проект</a></li>
+                <li><a class="btn" href="index.html">Главная страница</a></li>
+                <li><a class="btn" href="about.html">Портфолио кейсов</a></li>
+                <li><a class="btn" href="contacts.html">Контакты</a></li>
+                <li><a class="btn" href="contacts.html#contact-form">Обсудить проект</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ================= ОСНОВНОЙ КОНТЕНТ - Слоган ================= -->
+    <!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
     <main>
         <!-- Первая секция: Слоган компании -->
         <section class="slogan-section">
             <h2>«Создаем цифровые решения для роста вашего бизнеса»</h2>
             <p>Разработка, внедрение и сопровождение программных продуктов «1С»</p>
+            <a href="contacts.html#contact-form" class="btn btn-large floating">
+                <i class="fas fa-rocket"></i> Начать проект
+            </a>
         </section>
-    </main>
 
-    <!-- ================= ОСНОВНОЙ КОНТЕНТ - Информация о компании с белым фоном ================= -->
-    <main class="white-bg-section" id="about">
-        <section class="company-content">
+        <!-- Информация о компании -->
+        <section class="company-content" id="about">
             <h2>О компании «Айкрит»</h2>
             
             <p>«Айкрит» — региональная IT-компания из Красноярска, специализирующаяся на внедрении и сопровождении программных продуктов «1С» для коммерческих организаций. Мы работаем на рынке автоматизации бизнеса с 2019 года и за это время зарекомендовали себя как надежный партнер для компаний из сферы торговли, услуг и производства.</p>
@@ -73,6 +76,25 @@
             <p>Среди наших клиентов — компании из сферы торговли, услуг и производства. Мы реализовали проекты для ООО «Траст-Инвест» (автоматизация заказов и интеграция сайта с 1С), ООО «Алпрофсити» (внедрение «1С:Управление нашей фирмой»), ООО «Промснаб 2000» (автоматизация зарплаты и управления персоналом), а также для компаний, работающих с маркированной продукцией.</p>
             
             <p>Мы гордимся тем, что клиенты доверяют нам автоматизацию своих ключевых процессов, и продолжаем развивать экспертизу, чтобы предлагать решения, которые действительно работают.</p>
+            
+            <div class="portfolio-stats" style="margin-top: 40px;">
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Реализованных проектов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Клиентов на сопровождении</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4 года</div>
+                    <div class="stat-label">Опыта на рынке</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45+</div>
+                    <div class="stat-label">Сертифицированных специалистов</div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -81,14 +103,23 @@
         <!-- Текстовая часть слева -->
         <div class="footer-text">
             <h2>Свяжитесь с нами</h2>
-            <p>Email: <a href="mailto:info@aikrit.ru">info@aikrit.ru</a></p>
-            <p>Телефон: +7 (391) 555-00-00</p>
-            <p>Адрес: г. Красноярск, ул. Примерная, д. 123</p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@icrit.ru">hello@icrit.ru</a></p>
+            <p><i class="fas fa-phone"></i> Телефон: <a href="tel:+73912167221">+7 (391) 216-72-21</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Адрес: Красноярск, проспект Мира, 109 </p>
+            <p><i class="fas fa-clock"></i> Режим работы: Пн–Пт с 09:00 до 18:00</p>
+            
+            <div class="social-links" style="margin: 20px 0;">
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-vk"></i> VK</a>
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
             <p>&copy; 2026 ООО «Айкрит». Все права защищены.</p>
         </div>
 
         <!-- Логотип компании справа -->
         <img src="Img/1.png" alt="Логотип компании" width="100" height="auto">
+    </footer>
 
 </body>
 </html>

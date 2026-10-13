@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Как нас найти | Айкрит</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contacts.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="liquid-glass.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- ================= ШАПКА САЙТА ================= -->
-    <header>
+    <header class="glass-shimmer">
         <!-- Логотип слева -->
         <img src="Img/1.png" alt="Логотип компании">
 
@@ -30,16 +30,18 @@
         </nav>
     </header>
 
-    <!-- ================= ОСНОВНОЙ КОНТЕНТ - Слоган ================= -->
+    <!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
     <main>
+        <!-- Hero секция -->
         <section class="slogan-section">
             <h2>«Свяжитесь с нами для решения ваших бизнес-задач»</h2>
             <p>Профессиональная консультация и поддержка по внедрению «1С»</p>
+            <a href="#contact-form" class="btn btn-large floating">
+                <i class="fas fa-comments"></i> Отправить сообщение
+            </a>
         </section>
-    </main>
 
-    <!-- ================= КОНТАКТНЫЕ ДАННЫЕ ================= -->
-    <main class="white-bg-section">
+        <!-- Контактные данные -->
         <section class="company-content contacts-section">
             <h2>Как нас найти</h2>
             <p class="contacts-intro">Мы всегда готовы ответить на ваши вопросы и помочь с внедрением автоматизации для вашего бизнеса.</p>
@@ -109,11 +111,9 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- ================= ФОРМА СВЯЗИ ================= -->
-    <main class="white-bg-section contact-form-section" id="contact-form">
-        <section class="company-content">
+        <!-- Форма связи -->
+        <section class="company-content contact-form-section" id="contact-form">
             <h2>Форма связи</h2>
             <p class="form-intro">Оставьте заявку, и наш специалист свяжется с вами в течение 1 рабочего дня</p>
             
@@ -150,10 +150,21 @@
     </main>
 
     <!-- ================= ПОДВАЛ ================= -->
-    <footer>
+    <footer id="contacts">
         <!-- Текстовая часть слева -->
         <div class="footer-text">
-            <h2>Будем рады сотрудничеству!</h2>
+            <h2>Свяжитесь с нами</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@icrit.ru">hello@icrit.ru</a></p>
+            <p><i class="fas fa-phone"></i> Телефон: <a href="tel:+73912167221">+7 (391) 216-72-21</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Адрес: пр. Мира, 45, оф. 303, Красноярск, 660049</p>
+            <p><i class="fas fa-clock"></i> Режим работы: Пн–Пт с 09:00 до 18:00</p>
+            
+            <div class="social-links" style="margin: 20px 0;">
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-vk"></i> VK</a>
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
             <p>&copy; 2026 ООО «Айкрит». Все права защищены.</p>
         </div>
 

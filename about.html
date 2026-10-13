@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио кейсов | Айкрит</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="liquid-glass.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- ================= ШАПКА САЙТА ================= -->
-    <header>
+    <header class="glass-shimmer">
         <!-- Логотип слева -->
         <img src="Img/1.png" alt="Логотип компании">
 
@@ -23,26 +24,44 @@
         <nav>
             <ul>
                 <li><a class="btn" href="index.html">Главная страница</a></li>
-                <li><a class="btn" href="about.html">Портфолио</a></li>
+                <li><a class="btn" href="about.html">Портфолио кейсов</a></li>
                 <li><a class="btn" href="contacts.html">Контакты</a></li>
-                <li><a class="btn" href="#spec-offer">Обсудить проект</a></li>
+                <li><a class="btn" href="contacts.html#contact-form">Обсудить проект</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ================= ОСНОВНОЙ КОНТЕНТ - Спецпредложение ================= -->
+    <!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
     <main>
+        <!-- Hero секция -->
         <section class="slogan-section">
             <h2>«Реализованные проекты для роста бизнеса наших клиентов»</h2>
             <p>Более 40 успешных внедрений «1С» и комплексных IT-решений</p>
+            <a href="contacts.html#contact-form" class="btn btn-large floating">
+                <i class="fas fa-chart-line"></i> Заказать аудит
+            </a>
         </section>
-    </main>
 
-    <!-- ================= ПОРТФОЛИО КЕЙСОВ ================= -->
-    <main class="white-bg-section">
+        <!-- Портфолио кейсов -->
         <section class="company-content portfolio-section">
             <h2>Портфолио кейсов</h2>
             <p class="portfolio-intro">В этом разделе представлены наши лучшие проекты по разработке и внедрению IT-решений для бизнеса.</p>
+            
+            <!-- Специальное предложение -->
+            <div class="special-offer-section" id="spec-offer">
+                <div class="special-offer-banner">
+                    <div class="offer-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="offer-content">
+                        <h2>Бесплатный аудит и оценка вашего действующего сайта за 1 рабочий день</h2>
+                        <p>Оставьте заявку и получите профессиональный анализ вашего сайта с рекомендациями по улучшению и оценкой стоимости доработок.</p>
+                        <a href="contacts.html#contact-form" class="btn btn-large">
+                            <i class="fas fa-calendar-check"></i> Получить бесплатный аудит
+                        </a>
+                    </div>
+                </div>
+            </div>
             
             <div class="portfolio-grid">
                 <!-- Карточка 1 -->
@@ -179,10 +198,18 @@
     <footer id="contacts">
         <!-- Текстовая часть слева -->
         <div class="footer-text">
-            <h2>Свяжитесь с нами для обсуждения проекта</h2>
-            <p>Email: <a href="mailto:info@aikrit.ru">info@aikrit.ru</a></p>
-            <p>Телефон: +7 (391) 555-00-00</p>
-            <p>Адрес: г. Красноярск, ул. Примерная, д. 123</p>
+            <h2>Свяжитесь с нами</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@icrit.ru">hello@icrit.ru</a></p>
+            <p><i class="fas fa-phone"></i> Телефон: <a href="tel:+73912167221">+7 (391) 216-72-21</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Адрес: пр. Мира, 45, оф. 303, Красноярск, 660049</p>
+            <p><i class="fas fa-clock"></i> Режим работы: Пн–Пт с 09:00 до 18:00</p>
+            
+            <div class="social-links" style="margin: 20px 0;">
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-vk"></i> VK</a>
+                <a href="#" class="btn" style="margin-right: 10px;"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
             <p>&copy; 2026 ООО «Айкрит». Все права защищены.</p>
         </div>
 
